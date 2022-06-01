@@ -1,0 +1,27 @@
+// Color definitions
+
+$colors: (
+  'brand':      #FFE400,
+  'brand-off':  #FFCC00,
+  'alpha':      #333333,
+  'beta':       #666666,
+  'gamma':      #999999,
+  'delta':      #CCCCCC,
+  'epsilon':    #E5E5E5,
+  'off-white':  #F8F8F8,
+  'white':      #FFFFFF,
+  'black':      #000000,
+  'background': #F0ECEE,
+);
+
+// Helper
+
+@function get-color($name) {
+
+  @if map-has-key($colors, $name){
+    @return map-get($colors, $name);
+  } @else {
+    @error 'Color #{$name} not found in $colors';
+  }
+
+}

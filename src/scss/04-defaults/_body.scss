@@ -1,0 +1,15 @@
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: #303030;
+  overflow-x: hidden; // no horizontal scrollbar at any time
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}

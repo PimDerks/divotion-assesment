@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    #QUOTES
+\*------------------------------------*/
+
+blockquote,
+q,
+cite {
+    font-style: italic;
+    quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+q,
+cite {
+
+    &::before,
+    &::after {
+        // color: #ccc;
+        content: open-quote;
+        // font-size: 4em;
+        // line-height: 0.1em;
+        // margin-right: 0.25em;
+        // vertical-align: -0.4em;
+    }
+
+    &::after {
+        content: close-quote;
+    }
+}
+
+
+blockquote {
+
+    p:first-of-type {
+        &::before {
+            content: open-quote;
+            display: inline-block;
+            margin-left: -.33rem;
+        }
+    }
+
+    p:last-of-type {
+        &::after {
+            content: close-quote;
+        }
+    }
+
+}

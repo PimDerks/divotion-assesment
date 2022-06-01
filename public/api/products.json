@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "title": "The Queen Album",
+    "img": "/img/products/the-queen-album.jpg",
+    "format": "CD",
+    "date": "2014-09"
+  },
+  {
+    "id": 2,
+    "title": "Bizarro World",
+    "img": "/img/products/bizarro-world.jpg",
+    "format": "CD",
+    "date": "2014-09"
+  },
+  {
+    "id": 3,
+    "title": "Imagine",
+    "img": "/img/products/imagine.jpg",
+    "format": "CD-single",
+    "date": "2014-12"
+  },
+  {
+    "id": 4,
+    "title": "Black Rain",
+    "img": "/img/products/black-rain.jpg",
+    "format": "CD-single",
+    "date": "2015-02"
+  },
+  {
+    "id": 5,
+    "title": "RV",
+    "img": "/img/products/rv.jpg",
+    "format": "2xCD",
+    "date": "2016-01"
+  },
+  {
+    "id": 6,
+    "title": "Soldiers Of Light",
+    "img": "/img/products/soldiers-of-light.jpg",
+    "format": "CD-single",
+    "date": "2018-04"
+  },
+  {
+    "id": 7,
+    "title": "Judgement Day",
+    "img": "/img/products/judgement-day.jpg",
+    "format": "CD-single",
+    "date": "2018-06"
+  },
+  {
+    "id": 8,
+    "title": "The Alliance",
+    "img": "/img/products/the-alliance.jpg",
+    "format": "CD",
+    "date": "2018-06"
+  },
+  {
+    "id": 9,
+    "title": "Bizarro World: Piano Versions",
+    "img": "/img/products/bw-piano-versions.jpg",
+    "format": "CD",
+    "date": "2018-06"
+  },
+  {
+    "id": 10,
+    "title": "Masters Of Our Minds",
+    "img": "/img/products/masters-of-our-minds.jpg",
+    "format": "CD-single",
+    "date": "2018-06"
+  },
+  {
+    "id": 11,
+    "title": "The Alliance",
+    "img": "/img/products/the-alliance-vinyl.jpg",
+    "format": "LP",
+    "date": "2020-02"
+  },
+  {
+    "id": 12,
+    "title": "Separate Worlds",
+    "img": "/img/products/separate-worlds.jpg",
+    "format": "CD",
+    "date": "2020-12"
+  },
+  {
+    "id": 13,
+    "title": "Roll Up Your Sleeves",
+    "img": "/img/products/roll-up-your-sleeves.jpg",
+    "format": "Download",
+    "date": "2021-06"
+  },
+  {
+    "id": 14,
+    "title": "Break The Chain",
+    "img": "/img/products/break-the-chain.jpg",
+    "format": "Download",
+    "date": "2021-06"
+  },
+  {
+    "id": 15,
+    "title": "The Beatles Album",
+    "img": "/img/products/the-beatles-album.jpg",
+    "format": "CD",
+    "date": "2021-12"
+  },
+  {
+    "id": 16,
+    "title": "The Black Dog Album",
+    "img": "/img/products/the-black-dog-album.jpg",
+    "format": "CD",
+    "date": "2022-02"
+  }
+]

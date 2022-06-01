@@ -1,0 +1,21 @@
+.o-product {
+  position: relative;
+}
+
+.o-product__amount {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(50%) translateY(-50%);
+  z-index: 10;
+}
+
+.o-product__action {
+  border-width: 0;
+  font-size: 3rem;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

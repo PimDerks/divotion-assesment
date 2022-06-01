@@ -1,0 +1,224 @@
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+@font-face {
+  font-family: "alien";
+  src: url("../../../public/fonts/alienleagueiibold-webfont.woff2")
+      format("woff2"),
+    url("../../../public/fonts/alienleagueiibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-default: Georgia, Times New Roman, sans-serif;
+$font-display: "alien", Impact, Arial, sans-serif;
+
+body {
+  font-family: $font-default;
+  font-weight: 100;
+}
+
+body {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.u-heading-alpha,
+.u-heading-beta,
+.u-heading-gamma,
+.u-heading-delta {
+  color: get-color("brand-off");
+  font-family: $font-display;
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: baseline(1);
+  position: relative;
+}
+
+/* Basic vertical rhythm
+----------------------------------------------- */
+
+@each $bp-name, $bp-code in $breakpoints {
+  @if map-has-key($typographic-breakpoints, $bp-name) {
+    $scope: map-get($typographic-breakpoints, $bp-name);
+
+    @include respond-min($bp-name) {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      dl,
+      ol,
+      ul,
+      fieldset,
+      legend,
+      figure,
+      table,
+      caption,
+      hr,
+      address {
+        margin-bottom: baseline(1);
+      }
+    }
+  }
+}
+
+/* Generate silent selectors for typographic scale.
+----------------------------------------------- */
+
+@for $i from 1 through length($breakpoints) {
+  $bp: nth($breakpoints, $i);
+  $bp-name: nth($bp, 1);
+  $bp-code: nth($bp, 2);
+
+  @if map-has-key($typographic-breakpoints, $bp-name) {
+    $scope: map-get($typographic-breakpoints, $bp-name);
+
+    // first breakpoint should be without media-query
+    @if $i > 1 {
+      @include respond-min($bp-name) {
+        @each $scale in $typographic-scale-names {
+          $scale-name: nth($scale, 1);
+          $scale-scale: nth($scale, 2);
+          $scale-extra-line-height: nth($scale-scale, 1);
+          $scale-margin-bottom: nth($scale-scale, 2);
+
+          %u-#{$scale-name} {
+            @include calculate-scale(
+              $bp-name,
+              $scale-name,
+              $scale-extra-line-height
+            );
+            margin-bottom: baseline(
+              $scale-margin-bottom,
+              $bp-name,
+              $scale-name
+            );
+          }
+        }
+      }
+    } @else {
+      @each $scale in $typographic-scale-names {
+        $scale-name: nth($scale, 1);
+        $scale-scale: nth($scale, 2);
+        $scale-extra-line-height: nth($scale-scale, 1);
+        $scale-margin-bottom: nth($scale-scale, 2);
+
+        %u-#{$scale-name} {
+          @include calculate-scale(
+            $bp-name,
+            $scale-name,
+            $scale-extra-line-height
+          );
+          margin-bottom: baseline($scale-margin-bottom, $bp-name, $scale-name);
+        }
+      }
+    }
+  }
+}
+
+/* Headings
+----------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.u-subheading-alpha,
+.u-subheading-beta,
+.u-subheading-gamma {
+  color: get-color("brand-off");
+
+  a {
+    color: get-color("brand-off");
+    text-decoration: none;
+
+    &:focus,
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+h3 {
+  // color: get-color('white');
+}
+
+h1,
+.u-heading-alpha {
+  @extend %u-heading-alpha;
+}
+
+h2,
+.u-heading-beta {
+  @extend %u-heading-beta;
+}
+
+h3,
+.u-heading-gamma {
+  @extend %u-heading-gamma;
+}
+
+h4,
+.u-heading-delta {
+  @extend %u-heading-delta;
+}
+
+h5,
+.u-heading-epsilon {
+  @extend %u-heading-epsilon;
+}
+
+p {
+  @extend %u-base;
+}
+
+small {
+  @extend %u-small;
+}
+
+/* Set base font-sizes configured in $typographic-breakpoints.
+----------------------------------------------- */
+
+$base: 16; // browser default
+
+@each $bp-name, $bp-size in $breakpoints {
+  $bp-config: map-get($typographic-breakpoints, $bp-name);
+
+  @if not $bp-config {
+    // @warn 'No value found for `#{$bp-name}`. Please make sure it is defined in `$typographic-breakpoints` map.';
+  }
+
+  @if map-has-key($typographic-breakpoints, $bp-name) {
+    $bp: map-get($breakpoints, $bp-name);
+    $font-size: map-get($bp-config, "font-size");
+    $line-height: map-get($bp-config, "line-height");
+
+    @include respond-min($bp-name) {
+      html {
+        font-size: calc($font-size/$base) * 100%;
+        line-height: $line-height;
+      }
+    }
+  }
+}

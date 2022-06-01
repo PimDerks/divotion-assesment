@@ -1,0 +1,47 @@
+.o-wishlist {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  color: white;
+  overflow: auto;
+  opacity: 0;
+  padding: baseline(1);
+  position: fixed;
+  transform: translateX(100%);
+  transition: all 300ms ease-out;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+
+  &[aria-expanded="true"] {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.o-wishlist__toggle {
+  border-width: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.o-amount-indicator {
+  background-color: get-color("white");
+  box-shadow: 0 0 5px rgba(get-color("black"), 0.5);
+  border-radius: 50%;
+  color: get-color("black");
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1rem;
+  font-weight: bold;
+  height: baseline(1);
+  letter-spacing: 1px;
+  line-height: baseline(1);
+  margin-left: baseline(0.5);
+  text-align: center;
+  width: baseline(1);
+
+  &--small {
+    font-size: 0.5rem;
+  }
+}

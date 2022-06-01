@@ -1,0 +1,12 @@
+/*------------------------------------*\
+    #SELECTION
+\*------------------------------------*/
+
+/**
+ * Selected/highlighted text.
+ */
+
+::selection {
+  background: get-color("brand");
+  color: get-color("black");
+}

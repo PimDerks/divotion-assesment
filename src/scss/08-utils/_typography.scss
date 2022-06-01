@@ -1,0 +1,64 @@
+.u-heading-alpha {
+  @extend %u-heading-alpha;
+  font-weight: $font-weight-light;
+}
+
+.u-heading-beta {
+  @extend %u-heading-beta;
+  font-weight: $font-weight-light;
+}
+
+.u-heading-gamma {
+  @extend %u-heading-gamma;
+  font-weight: $font-weight-light;
+}
+
+.u-xlarge {
+  @extend %u-heading-beta;
+}
+
+.u-large {
+  @extend %u-heading-gamma;
+}
+
+.u-medium {
+  @extend %u-heading-beta;
+}
+
+.u-brand {
+  color: get-color("brand");
+}
+
+.u-display {
+  font-family: $font-display;
+  text-transform: lowercase;
+}
+
+.u-upper {
+  text-transform: uppercase;
+}
+
+.u-strong {
+  font-weight: $font-weight-bold;
+}
+
+.u-italic {
+  font-style: italic;
+}
+
+.u-dimmed {
+  opacity: 0.5;
+}
+
+.u-lead {
+  @extend %u-lead;
+  font-style: italic;
+}
+
+.u-center {
+  text-align: center;
+}
+
+.u-right {
+  text-align: right;
+}

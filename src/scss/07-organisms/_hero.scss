@@ -1,0 +1,86 @@
+.o-hero {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: baseline(4);
+  padding-top: baseline(6);
+  position: relative;
+  text-align: center;
+  text-shadow: 0 0 0.5em rgba(black, 0.5);
+  transition: background-position 250ms linear;
+  width: 100%;
+
+  @include respond-min("m") {
+    padding-bottom: baseline(6);
+    padding-top: baseline(9);
+  }
+
+  @include respond-min("m") {
+    text-align: left;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 3;
+  }
+
+  + * {
+    position: relative;
+    z-index: 3;
+
+    .wrapper {
+      margin-top: baseline(-3);
+
+      @include respond-min("l") {
+        margin-top: baseline(-6);
+      }
+    }
+  }
+
+  .wrapper {
+    height: 100%;
+    top: 0;
+    width: 100%;
+  }
+
+  // Overlay
+  &::before {
+    background-color: rgba(#303030, 0.25);
+    bottom: 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(rgba(#303030, 0), #303030);
+    z-index: 2;
+  }
+
+  // Title
+  .o-hero__title {
+    color: get-color("white");
+
+    @include respond-min("m") {
+      max-width: 12em;
+    }
+  }
+
+  // Subtitle
+  .o-hero__subtitle {
+    background: get-color("black");
+    color: get-color("brand");
+    display: inline-block;
+    margin-bottom: 0;
+    padding: baseline(0.5);
+  }
+}

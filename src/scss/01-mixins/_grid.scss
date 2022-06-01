@@ -1,0 +1,15 @@
+$columns: 10;
+$column: calc(100 / $columns);
+
+@function grid-unit($amount, $context: null) {
+  $return: $amount * $column;
+
+  @if ($context) {
+    $context: calc($context/$columns) * 100;
+    $gu: ($column * calc(100 / $context));
+    $context: calc(100 / $columns) * $context;
+    $return: $amount * $gu;
+  }
+
+  @return $return * 1%;
+}

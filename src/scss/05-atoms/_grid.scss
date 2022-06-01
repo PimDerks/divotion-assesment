@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    #GRID
+\*------------------------------------*/
+
+// -----------------------------------------------------------------------------
+// Grid
+// -----------------------------------------------------------------------------
+
+/**
+ * Grid
+ */
+
+.m-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 #{-$gutter-half};
+  padding: 0;
+
+  @include respond-min("m") {
+    &.m-layout--wide {
+      margin-left: #{-$gutter};
+      margin-right: #{-$gutter};
+    }
+  }
+
+  .m-layout__row {
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .m-layout__column {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .m-layout__row--rev .m-layout__column {
+    float: right;
+  }
+
+  .m-layout__item {
+    position: relative;
+    margin-bottom: baseline(2);
+    padding-left: $gutter-half;
+    padding-right: $gutter-half;
+    width: 100%;
+
+    @include respond-min("m") {
+      padding-left: $gutter-half;
+      padding-right: $gutter-half;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .m-layout__item--alt {
+    margin-bottom: baseline(2);
+  }
+}
+
+@include respond-min("l") {
+  .m-layout__sidebar {
+    margin-top: baseline(3);
+  }
+}

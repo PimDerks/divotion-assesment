@@ -1,0 +1,41 @@
+.o-wishlist-items__item {
+  padding: baseline(1) 0;
+
+  + .o-wishlist-items__item {
+    border-top: 1px dotted get-color("beta");
+  }
+}
+
+.o-wishlist-item {
+  padding-left: 75px;
+  position: relative;
+
+  &:hover .o-wishlist-item__actions {
+    opacity: 1;
+  }
+}
+
+.o-wishlist-item__details {
+  margin-bottom: 0;
+}
+
+.o-wishlist-item__image {
+  left: 0;
+  margin-bottom: 0;
+  position: absolute;
+  width: 50px;
+}
+
+.o-wishlist-item__amount {
+  margin-left: 0;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.o-wishlist-item__actions {
+  margin-top: baseline(0.5);
+  opacity: 0.5;
+  top: 100%;
+}

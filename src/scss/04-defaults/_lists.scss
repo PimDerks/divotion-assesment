@@ -1,0 +1,93 @@
+/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+
+ul,
+ol {
+    list-style: none none inside;
+    padding-left: 0;
+}
+
+ul {
+    > li {
+        padding-left: baseline(1.5);
+        position: relative;
+
+        &::before {
+            background-color: #ffe400;
+            border-radius: 50%;
+            content: '';
+            display: block;
+            height: .25em;
+            left: .75em;
+            position: absolute;
+            top: baseline(.5);
+            width: .25em;
+        }
+    }
+}
+
+ol {
+    counter-reset: ol;
+    padding-left: 0;
+
+    > li {
+        counter-increment: ol;
+        padding-left: baseline(1.5);
+        position: relative;
+
+        &::before {
+            color: get-color('brand-off');
+            content: counter(ol) '.';
+            display: inline-block;
+            line-height: 1.5rem;
+            text-align: right;
+            position: absolute;
+            left: 0;
+            top: .1em;
+            width: 1.5rem;
+            vertical-align: bottom;
+        }
+
+    }
+
+}
+
+ul ol,
+ol ul,
+ul ul {
+padding-left: baseline(1);
+}
+
+dl {
+
+    dt,
+    dd {
+        display: block;
+        padding: 0;
+    }
+
+    dt {
+        // font-family: $font-display;
+        opacity: .5;
+        // text-transform: uppercase;
+        &::after {
+            content: ':';
+        }
+    }
+
+    dd + dt {
+        margin-top: baseline(1);
+
+        &::before {
+            border-top: 1px solid currentColor;
+            content: '';
+            display: block;
+            margin-bottom: baseline(1);
+            opacity: .33;
+            width: 100%;
+        }
+    }
+
+}
+

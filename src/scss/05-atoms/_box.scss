@@ -1,0 +1,119 @@
+.box,
+.box--brand {
+  background: rgba(white, .99);
+  border-radius: .25em;
+  overflow: hidden;
+  position: relative;
+
+  * {
+    // color: White !important;
+  }
+}
+
+.box--unrounded {
+  border-radius: 0;
+}
+
+.box--island {
+  margin-bottom: baseline(2);
+}
+
+.box--gradient {
+  background-color: transparent;
+  background-image: linear-gradient(transparent, rgba(black, .5));
+  color: white;
+  text-align: center;
+}
+
+.box--dimmed {
+  background: rgba(black, .25);
+  color: white;
+}
+
+.box--black {
+  background: rgba(black, .75);
+}
+
+.box--dimmed a {
+  color: white;
+}
+
+.box--brand {
+  background: rgba(#ffe400, .99);
+}
+
+.box--brand .section-title::after {
+  border-top-color: black;
+}
+
+.inner--spacing {
+  padding-bottom: baseline(9);
+  padding-left: baseline(3);
+  padding-right: baseline(18);
+}
+
+.inner--small {
+  padding: baseline(1);
+}
+
+
+.box--alt {
+  padding: baseline(4) 0;
+}
+
+.box--transparent {
+  background-color: rgba(black, .5);
+}
+
+
+.box--inv {
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #FFE400;
+    &::after {
+      border-color: white;
+    }
+  }
+}
+
+.box--inv {
+  background: rgba(black, .75);
+}
+
+.box--pic {
+  background: black;
+  overflow: hidden;
+  position: relative;
+
+  &::after,
+  &::before {
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
+
+  &::after {
+    background-image: url('http://4.bp.blogspot.com/-xyUH3ecZTNg/VOOZSFOtF1I/AAAAAAAABYc/st3vfnoNwos/s1600/RVCover.jpg');
+    background-position: bottom right;
+    background-size: cover;
+    z-index: 1;
+  }
+
+  &::before {
+    background-image: linear-gradient(black, transparent), linear-gradient(to right, black, transparent);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}

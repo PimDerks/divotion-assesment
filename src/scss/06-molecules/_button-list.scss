@@ -1,0 +1,18 @@
+.m-button-list {
+}
+
+.m-button-list__button {
+  &:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+
+  + .m-button-list__button {
+    margin-left: -2px;
+  }
+}
